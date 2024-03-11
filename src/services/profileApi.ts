@@ -1,11 +1,9 @@
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
-import { authHeader } from "./authHeader";
+import { customHeader } from "./config";
 
-//Building api for authentication
 export const profileApi = createApi({
   reducerPath: "profileApi",
-  baseQuery: fetchBaseQuery(authHeader()),
-  //building the endpoints
+  baseQuery: fetchBaseQuery(customHeader()),
   endpoints: (builder) => ({
     getProfile: builder.query({
       query: () => "auth/profile",
@@ -14,5 +12,4 @@ export const profileApi = createApi({
   }),
 });
 
-//Auto generated hook - starts with use & ends on query
 export const { useGetProfileQuery } = profileApi;

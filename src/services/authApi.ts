@@ -1,9 +1,9 @@
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
-import { authHeader } from "./authHeader";
+import { customHeader } from "./config";
 
 export const authApi = createApi({
   reducerPath: "authApi",
-  baseQuery: fetchBaseQuery(authHeader()),
+  baseQuery: fetchBaseQuery(customHeader()),
   endpoints: (builder) => ({
     login: builder.mutation({
       query: (credentials) => ({

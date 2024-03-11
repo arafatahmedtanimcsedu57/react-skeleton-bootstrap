@@ -1,6 +1,6 @@
 import { RootState } from "../store";
 
-export const authHeader = () : any => {
+export const customHeader = () : any => {
   return {
     baseUrl: "https://api.escuelajs.co/api/v1/",
     credentials: "omit", //it will bypass CORS

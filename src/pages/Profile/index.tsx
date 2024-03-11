@@ -1,11 +1,10 @@
-import { Card, Stack } from "react-bootstrap";
-import { useGetProfileQuery } from "../../services/profileApi";
 import React from "react";
 import { Link } from "react-router-dom";
+import { Card, Stack } from "react-bootstrap";
 
-const Profile : React.FunctionComponent = () : JSX.Element => {
+import { useGetProfileQuery } from "../../services/profileApi";
 
-  //Retrieve profile data 
+const Profile: React.FunctionComponent<any> = (): JSX.Element => {
   const { data, isLoading, isSuccess } = useGetProfileQuery({});
 
   return (
@@ -21,8 +20,13 @@ const Profile : React.FunctionComponent = () : JSX.Element => {
           <Card.Body>
             <Card.Title>{data.email}</Card.Title>
             <Card.Text>{data.role}</Card.Text>
-            <Card.Text role="button" className="text-center" style={{textDecoration:'underline', fontWeight:500}}>
-              <Link to="/products">Check All Prodcuts</Link></Card.Text>
+            <Card.Text
+              role="button"
+              className="text-center"
+              style={{ textDecoration: "underline", fontWeight: 500 }}
+            >
+              <Link to="/products">Check All Prodcuts</Link>
+            </Card.Text>
           </Card.Body>
         </Card>
       )}
